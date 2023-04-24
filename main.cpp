@@ -419,11 +419,7 @@ extern "C" void* ThreadStats(void*) {
 }
 
 static const string mainnet_seeds[] = {"127.0.0.1", "dnsseed.sumcoin.org", "dnsseed.sumexplorer.com", ""};
-static const string testnet_seeds[] = {"testnet-seed.alexykot.me",
-                                       "testnet-seed.bitcoin.petertodd.org",
-                                       "testnet-seed.bluematt.me",
-                                       "testnet-seed.bitcoin.schildbach.de",
-                                       ""};
+static const string testnet_seeds[] = {"ahhhhh", ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
@@ -483,7 +479,7 @@ int main(int argc, char **argv) {
       pchMessageStart[0] = 0xf1;
       pchMessageStart[1] = 0xe6;
       pchMessageStart[2] = 0xf9;
-      pchMessageStart[3] = 0xa2;
+      pchMessageStart[3] = 0xa1;
       seeds = testnet_seeds;
       fTestNet = true;
   }
