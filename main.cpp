@@ -85,17 +85,17 @@ public:
           host = optarg;
           break;
         }
-        
+
         case 'm': {
           mbox = optarg;
           break;
         }
-        
+
         case 'n': {
           ns = optarg;
           break;
         }
-        
+
         case 't': {
           int n = strtol(optarg, NULL, 10);
           if (n > 0 && n < 1000) nThreads = n;
@@ -418,7 +418,7 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"dnsseed.bluematt.me", "bitseed.xf2.org", "dnsseed.bitcoin.dashjr.org", "seed.bitcoin.sipa.be", ""};
+static const string mainnet_seeds[] = {"dnsseed.sumcoin.org", "dnsseed.sumexplorer.com", ""};
 static const string testnet_seeds[] = {"testnet-seed.alexykot.me",
                                        "testnet-seed.bitcoin.petertodd.org",
                                        "testnet-seed.bluematt.me",
@@ -428,7 +428,7 @@ static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
-    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 8333), true);
+    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 3333), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
